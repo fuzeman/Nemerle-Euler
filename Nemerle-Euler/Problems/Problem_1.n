@@ -1,0 +1,37 @@
+﻿using Nemerle;
+using Nemerle.Collections;
+using Nemerle.Text;
+using Nemerle.Utility;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+/// <summary>
+/// Problem 1 - Multiples of 3 and 5
+/// --------------------------------------------------------
+/// Find the sum of all the multiples of 3 or 5 below 1000.
+/// </summary>
+module Problem_1
+{
+	public static problem_1() : void
+	{
+		mutable sum = 0;
+  		
+		def loop(x : int) : void
+		{
+			def xf = x :> float;
+  			
+			when(Math.Round(xf / 3) == xf / 3 || Math.Round(xf / 5) == xf / 5)
+				sum += x;
+  			
+			when(x > 1)
+				loop(x - 1);
+		}
+  		
+		def nBelow = 1000;
+		loop(nBelow - 1);
+  		
+		Console.WriteLine("Answer: {0}", sum);
+	}
+}

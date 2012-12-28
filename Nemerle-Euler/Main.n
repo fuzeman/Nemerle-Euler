@@ -1,0 +1,12 @@
+﻿using System;
+using System.Console;
+
+module Program
+{   
+    Main() : void
+    {
+		Problem_1.problem_1();
+    
+        _ = ReadLine();
+    }
+}

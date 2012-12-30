@@ -63,6 +63,9 @@
     <Compile Include="Problems\Problem_1.n">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Problems\Problem_2.n">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.n" />
   </ItemGroup>
   <ItemGroup>

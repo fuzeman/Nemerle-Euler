@@ -16,22 +16,14 @@ module Problem_1
 {
 	public static problem_1() : void
 	{
-		mutable sum = 0;
-  		
-		def loop(x : int) : void
-		{
+		def sum = $[0 .. (1000 - 1)].FoldLeft(0, fun(x : int, acc : int){
 			def xf = x :> float;
-  			
-			when(Math.Round(xf / 3) == xf / 3 || Math.Round(xf / 5) == xf / 5)
-				sum += x;
-  			
-			when(x > 1)
-				loop(x - 1);
-		}
-  		
-		def nBelow = 1000;
-		loop(nBelow - 1);
-  		
+			if(Math.Round(xf / 3) == xf / 3 || Math.Round(xf / 5) == xf / 5)
+				x + acc;
+			else
+				acc;
+		});
+		
 		Console.WriteLine("Answer: {0}", sum);
 	}
 }
